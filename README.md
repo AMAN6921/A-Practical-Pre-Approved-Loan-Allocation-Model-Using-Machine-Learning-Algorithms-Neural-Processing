@@ -404,26 +404,6 @@ The system analyzes **11 key financial indicators**:
 
 ---
 
-## 🎨 Screenshots
-
-<div align="center">
-
-### 🏠 Home Page
-![Home Page](https://via.placeholder.com/800x400/1a1a2e/eaeaea?text=Modern+Landing+Page+with+Hero+Section)
-
-### 🔮 Prediction Interface
-![Prediction](https://via.placeholder.com/800x400/0f3460/eaeaea?text=Interactive+Loan+Prediction+Form)
-
-### 📊 Analytics Dashboard
-![Dashboard](https://via.placeholder.com/800x400/16213e/eaeaea?text=Real-time+Analytics+%26+Metrics)
-
-### 📱 Mobile Responsive
-<img src="https://via.placeholder.com/300x600/533483/eaeaea?text=Mobile+View" alt="Mobile View" width="300"/>
-
-</div>
-
----
-
 ## 📈 Performance
 
 <div align="center">
@@ -544,40 +524,6 @@ users                    loan_applications           predictions
                          ├── status
                          └── application_date
 ```
-
----
-
-## 🤝 Contributing
-
-We welcome contributions! Here's how you can help:
-
-<div align="center">
-
-### 🌟 Ways to Contribute
-
-[![Report Bug](https://img.shields.io/badge/Report-Bug-red?style=for-the-badge&logo=github)](https://github.com/yourusername/loan-prediction-system/issues)
-[![Request Feature](https://img.shields.io/badge/Request-Feature-blue?style=for-the-badge&logo=github)](https://github.com/yourusername/loan-prediction-system/issues)
-[![Improve Docs](https://img.shields.io/badge/Improve-Docs-green?style=for-the-badge&logo=github)](https://github.com/yourusername/loan-prediction-system/pulls)
-
-</div>
-
-### 📝 Contribution Guidelines
-
-1. **Fork** the repository
-2. **Create** a feature branch (`git checkout -b feature/AmazingFeature`)
-3. **Commit** your changes (`git commit -m 'Add some AmazingFeature'`)
-4. **Push** to the branch (`git push origin feature/AmazingFeature`)
-5. **Open** a Pull Request
-
-### 🎯 Areas for Contribution
-
-- 🤖 **ML Models**: Improve accuracy, add new algorithms
-- 🎨 **UI/UX**: Enhance design, add animations
-- 🔧 **Backend**: Optimize APIs, add features
-- 📚 **Documentation**: Improve guides, add examples
-- 🧪 **Testing**: Add test cases, improve coverage
-- 🌐 **Localization**: Add multi-language support
-
 ---
 
 ## 📄 License
@@ -604,21 +550,12 @@ See [LICENSE](LICENSE) file for details
 
 ---
 
-## 📞 Contact & Support
-
 <div align="center">
-
-### 💬 Get in Touch
-
-[![GitHub Issues](https://img.shields.io/badge/GitHub-Issues-red?style=for-the-badge&logo=github)](https://github.com/yourusername/loan-prediction-system/issues)
-[![Email](https://img.shields.io/badge/Email-Contact-blue?style=for-the-badge&logo=gmail)](mailto:your.email@example.com)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/yourprofile)
 
 ### ⭐ Show Your Support
 
 If you find this project helpful, please consider giving it a ⭐ on GitHub!
 
-[![Star on GitHub](https://img.shields.io/github/stars/yourusername/loan-prediction-system?style=social)](https://github.com/yourusername/loan-prediction-system)
 
 </div>
 
@@ -655,20 +592,6 @@ If you find this project helpful, please consider giving it a ⭐ on GitHub!
 
 ---
 
-## 📊 Project Stats
-
-<div align="center">
-
-![GitHub repo size](https://img.shields.io/github/repo-size/yourusername/loan-prediction-system?style=for-the-badge)
-![GitHub language count](https://img.shields.io/github/languages/count/yourusername/loan-prediction-system?style=for-the-badge)
-![GitHub top language](https://img.shields.io/github/languages/top/yourusername/loan-prediction-system?style=for-the-badge)
-![GitHub last commit](https://img.shields.io/github/last-commit/yourusername/loan-prediction-system?style=for-the-badge)
-
-</div>
-
----
-
-<div align="center">
 
 ### 💖 Built with passion using React, Flask, and Machine Learning
 
