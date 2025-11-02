@@ -88,25 +88,6 @@
 
 ---
 
-## 🎬 Demo
-
-<div align="center">
-
-### 🖥️ Live Application Preview
-
-<!-- Add your demo GIF or video here -->
-![Demo Preview](https://via.placeholder.com/800x450/1a1a2e/16213e?text=Add+Your+Demo+GIF+Here)
-
-### 🎯 Prediction Interface
-![Prediction](https://via.placeholder.com/800x400/0f3460/16213e?text=Loan+Prediction+Form)
-
-### 📊 Analytics Dashboard
-![Dashboard](https://via.placeholder.com/800x400/16213e/0f3460?text=Real-time+Analytics+Dashboard)
-
-</div>
-
----
-
 ## 🏗️ Architecture
 
 <div align="center">
