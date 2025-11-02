@@ -1,0 +1,100 @@
+========================================
+UPLOAD TO GITHUB - STEP BY STEP COMMANDS
+========================================
+
+REPOSITORY: https://github.com/AMAN6921/A-Practical-Pre-Approved-Loan-Allocation-Model-Using-Machine-Learning-Algorithms-Neural-Processing
+
+========================================
+STEP 1: Initialize Git Repository
+========================================
+
+git init
+
+
+========================================
+STEP 2: Add All Files
+========================================
+
+git add .
+
+
+========================================
+STEP 3: Create Initial Commit
+========================================
+
+git commit -m "Initial commit: Loan Prediction AI System with ML models"
+
+
+========================================
+STEP 4: Add Remote Repository
+========================================
+
+git remote add origin https://github.com/AMAN6921/A-Practical-Pre-Approved-Loan-Allocation-Model-Using-Machine-Learning-Algorithms-Neural-Processing.git
+
+
+========================================
+STEP 5: Pull Existing LICENSE File
+========================================
+
+git pull origin main --allow-unrelated-histories
+
+
+========================================
+STEP 6: Push to GitHub
+========================================
+
+git push -u origin main
+
+
+========================================
+ALTERNATIVE: If Step 5 Fails
+========================================
+
+If you get an error with the pull command, use this instead:
+
+git branch -M main
+git push -u origin main --force
+
+(This will replace the LICENSE file with your complete project)
+
+
+========================================
+VERIFY UPLOAD
+========================================
+
+After pushing, visit:
+https://github.com/AMAN6921/A-Practical-Pre-Approved-Loan-Allocation-Model-Using-Machine-Learning-Algorithms-Neural-Processing
+
+You should see all your files uploaded!
+
+
+========================================
+TROUBLESHOOTING
+========================================
+
+If you get authentication errors:
+1. Make sure you're logged into GitHub
+2. You may need to use a Personal Access Token instead of password
+3. Generate token at: https://github.com/settings/tokens
+
+Then use:
+git remote set-url origin https://YOUR_TOKEN@github.com/AMAN6921/A-Practical-Pre-Approved-Loan-Allocation-Model-Using-Machine-Learning-Algorithms-Neural-Processing.git
+
+
+========================================
+WHAT WILL BE UPLOADED
+========================================
+
+✅ Source code (src/, backend/, models/, scripts/)
+✅ Configuration files (.gitignore, package.json, etc.)
+✅ Documentation (README.md, LICENSE)
+✅ Database schema and structure
+✅ Data files (Excel datasets)
+✅ Shell scripts
+
+❌ node_modules/ (excluded by .gitignore)
+❌ .venv/ (excluded by .gitignore)
+❌ __pycache__/ (excluded by .gitignore)
+❌ .env (excluded by .gitignore)
+
+========================================
