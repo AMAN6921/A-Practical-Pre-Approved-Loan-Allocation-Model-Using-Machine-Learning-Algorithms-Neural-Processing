@@ -676,6 +676,6 @@ If you find this project helpful, please consider giving it a ⭐ on GitHub!
 
 ---
 
-*Made with ❤️ by [Your Name](https://github.com/yourusername)*
+*Made with ❤️ by [AMAN6921](https://github.com/AMAN6921)*
 
 </div>
