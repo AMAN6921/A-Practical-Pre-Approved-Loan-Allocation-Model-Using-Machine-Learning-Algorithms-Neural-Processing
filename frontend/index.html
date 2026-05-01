@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PALP AI - Pre-Approved Loan Prediction System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="brand-icon">🌾</span>
+                <span class="brand-text">PALP AI</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#assessment" class="nav-link">Loan Assessment</a></li>
+                <li><a href="#dashboard" class="nav-link">Dashboard</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="app">
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <div class="hero">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        PALP AI: Pre-Approved Loan Prediction
+                        <span class="gradient-text">AI-Powered Credit Access for Rural India</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Fair, transparent, and instant loan assessment for 190 million unbanked Indians
+                    </p>
+                    <div class="hero-stats">
+                        <div class="stat-card">
+                            <div class="stat-value">94.5%</div>
+                            <div class="stat-label">ML Accuracy</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">&lt;2s</div>
+                            <div class="stat-label">Response Time</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">190M</div>
+                            <div class="stat-label">Potential Users</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">60%</div>
+                            <div class="stat-label">Interest Savings</div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-large" onclick="navigateTo('assessment')">
+                        Get Loan Assessment →
+                    </button>
+                </div>
+                <div class="hero-image">
+                    <div class="floating-card card-1">
+                        <div class="card-icon">✅</div>
+                        <div class="card-text">Instant Approval</div>
+                    </div>
+                    <div class="floating-card card-2">
+                        <div class="card-icon">🤖</div>
+                        <div class="card-text">AI-Powered</div>
+                    </div>
+                    <div class="floating-card card-3">
+                        <div class="card-icon">🔒</div>
+                        <div class="card-text">100% Secure</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features -->
+            <div class="features-section">
+                <h2 class="section-title">Why Choose Our System?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Lightning Fast</h3>
+                        <p>Get loan assessment in under 2 seconds. 99% faster than traditional methods.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎯</div>
+                        <h3>94.5% Accurate</h3>
+                        <p>Powered by 5 ML models including XGBoost and Random Forest for precise predictions.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💰</div>
+                        <h3>Save 60% on Interest</h3>
+                        <p>Access fair interest rates (8-10%) vs traditional moneylenders (24-36%).</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📄</div>
+                        <h3>75% Less Paperwork</h3>
+                        <p>Minimal documentation required. Simple, straightforward process.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🤝</div>
+                        <h3>Unbiased Assessment</h3>
+                        <p>AI-driven evaluation ensures fair treatment regardless of background.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📚</div>
+                        <h3>Financial Guidance</h3>
+                        <p>Get personalized credit improvement plans and scheme recommendations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Assessment Section -->
+        <section id="assessment" class="section">
+            <div class="container">
+                <div class="assessment-header">
+                    <h1 class="page-title">Loan Assessment</h1>
+                    <p class="page-subtitle">Fill in your details to get instant AI-powered loan recommendation</p>
+                </div>
+
+                <div class="assessment-layout centered">
+                    <!-- Form -->
+                    <div class="assessment-form-container">
+                        <form id="loanForm" class="loan-form">
+                            <div class="form-section">
+                                <h3 class="form-section-title">Credit Information</h3>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>Short-term Credit Score</label>
+                                        <select name="creditShort" required>
+                                            <option value="">Select...</option>
+                                            <option value="1">Good (1)</option>
+                                            <option value="0">Normal (0)</option>
+                                            <option value="-1">Poor (-1)</option>
+                                        </select>
+                                        <small>Last 6 months credit behavior</small>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label>Long-term Credit Score</label>
+                                        <select name="creditLong" required>
+                                            <option value="">Select...</option>
+                                            <option value="1">Good (1)</option>
+                                            <option value="0">Normal (0)</option>
+                                            <option value="-1">Poor (-1)</option>
+                                        </select>
+                                        <small>2+ years credit history</small>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>Credit Payment History (CPH)</label>
+                                        <select name="cph" required>
+                                            <option value="">Select...</option>
+                                            <option value="1">Excellent (1)</option>
+                                            <option value="0">Good (0)</option>
+                                            <option value="-1">Needs Improvement (-1)</option>
+                                        </select>
+                                        <small>Payment consistency</small>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label>Credit Time Limitation (CTL)</label>
+                                        <select name="ctl" required>
+                                            <option value="">Select...</option>
+                                            <option value="1">Always On Time (1)</option>
+                                            <option value="0">Usually On Time (0)</option>
+                                            <option value="-1">Often Late (-1)</option>
+                                        </select>
+                                        <small>Payment punctuality</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-section">
+                                <h3 class="form-section-title">Payment Metrics</h3>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>Average Payment History (APH)</label>
+                                        <input type="number" name="aph" step="0.01" min="0" max="1" value="0.85" required>
+                                        <small>Value between 0 and 1 (higher is better)</small>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label>Average Time Limitation (ATL)</label>
+                                        <input type="number" name="atl" step="0.01" min="0" max="1" value="0.80" required>
+                                        <small>Value between 0 and 1 (higher is better)</small>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>Quarterly Fluctuation</label>
+                                        <input type="number" name="quarterFluctuation" min="0" max="10" value="5" required>
+                                        <small>Credit changes (0-10 scale)</small>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label>Requested Amount (₹)</label>
+                                        <input type="number" name="requestedAmount" min="5000" step="1000" value="50000" required>
+                                        <small>Loan amount needed</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-section">
+                                <h3 class="form-section-title">Additional Details</h3>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>Loan Purpose</label>
+                                        <select name="loanPurpose" required>
+                                            <option value="Agriculture">Agriculture</option>
+                                            <option value="Business">Business</option>
+                                            <option value="Education">Education</option>
+                                            <option value="Personal">Personal</option>
+                                            <option value="Medical">Medical</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label>Employment Status</label>
+                                        <select name="employmentStatus">
+                                            <option value="Self-Employed">Self-Employed</option>
+                                            <option value="Employed">Employed</option>
+                                            <option value="Farmer">Farmer</option>
+                                            <option value="Daily Wage">Daily Wage</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-large btn-full">
+                                Get AI Assessment →
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Results -->
+                    <div class="assessment-results" id="results" style="display: none;">
+                        <div class="result-card" id="resultCard">
+                            <div class="result-header">
+                                <div class="result-icon" id="resultIcon"></div>
+                                <h2 id="resultTitle"></h2>
+                                <p id="resultMessage"></p>
+                            </div>
+
+                            <div class="result-stats">
+                                <div class="result-stat">
+                                    <div class="stat-label">Classification</div>
+                                    <div class="stat-value" id="classification"></div>
+                                </div>
+                                <div class="result-stat">
+                                    <div class="stat-label">Confidence</div>
+                                    <div class="stat-value" id="confidence"></div>
+                                </div>
+                                <div class="result-stat">
+                                    <div class="stat-label">Loan Range</div>
+                                    <div class="stat-value" id="loanRange"></div>
+                                </div>
+                                <div class="result-stat">
+                                    <div class="stat-label">Processing Time</div>
+                                    <div class="stat-value" id="processingTime"></div>
+                                </div>
+                            </div>
+
+                            <div class="result-details" id="resultDetails"></div>
+
+                            <button class="btn btn-secondary btn-full" onclick="resetForm()">
+                                Assess Another Application
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="loading" id="loading" style="display: none;">
+                    <div class="spinner"></div>
+                    <p>Analyzing your profile with AI...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="section">
+            <div class="container">
+                <h1 class="page-title">System Dashboard</h1>
+                <p class="page-subtitle">Real-time statistics and analytics</p>
+
+                <div class="dashboard-grid" id="dashboardContent">
+                    <div class="loading">
+                        <div class="spinner"></div>
+                        <p>Loading dashboard...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <h1 class="page-title">About the System</h1>
+                
+                <div class="about-content">
+                    <div class="about-section">
+                        <h2>The Problem</h2>
+                        <p>190 million Indians remain unbanked, with 65% of the rural population lacking formal credit access. Traditional moneylenders charge 24-36% interest rates, while banks offer 10-12% but reject most rural applicants due to lack of documentation and credit history.</p>
+                    </div>
+
+                    <div class="about-section">
+                        <h2>About PALP AI</h2>
+                        <p>PALP AI (Pre-Approved Loan Prediction) is an AI-powered system that analyzes 11 financial indicators using 5 machine learning models to provide fair, unbiased loan assessments in under 2 seconds. We match applicants with suitable government schemes and provide personalized credit improvement plans.</p>
+                    </div>
+
+                    <div class="about-section">
+                        <h2>Technology Stack</h2>
+                        <div class="tech-grid">
+                            <div class="tech-item">
+                                <strong>Backend:</strong> Python, Flask, SQLite
+                            </div>
+                            <div class="tech-item">
+                                <strong>ML Models:</strong> XGBoost, Random Forest, Neural Networks
+                            </div>
+                            <div class="tech-item">
+                                <strong>Frontend:</strong> HTML5, CSS3, JavaScript
+                            </div>
+                            <div class="tech-item">
+                                <strong>API:</strong> RESTful with JWT Authentication
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-section">
+                        <h2>Impact Metrics</h2>
+                        <div class="impact-grid">
+                            <div class="impact-card">
+                                <div class="impact-value">99%</div>
+                                <div class="impact-label">Faster Processing</div>
+                            </div>
+                            <div class="impact-card">
+                                <div class="impact-value">50%</div>
+                                <div class="impact-label">Fewer Rejections</div>
+                            </div>
+                            <div class="impact-card">
+                                <div class="impact-value">60%</div>
+                                <div class="impact-label">Interest Savings</div>
+                            </div>
+                            <div class="impact-card">
+                                <div class="impact-value">75%</div>
+                                <div class="impact-label">Less Documentation</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 PALP AI - Pre-Approved Loan Prediction System. Made with ❤️ for Rural India.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

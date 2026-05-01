@@ -4,7 +4,7 @@ Flask API Backend for Loan Prediction System
 Provides REST API endpoints for the React frontend
 """
 
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 import sys
 import os
@@ -24,7 +24,11 @@ from ml_models import get_ml_manager
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-app = Flask(__name__)
+# Get the parent directory (project root)
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+FRONTEND_DIR = os.path.join(BASE_DIR, 'frontend')
+
+app = Flask(__name__, static_folder=FRONTEND_DIR, static_url_path='')
 
 # Load configuration
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -33,8 +37,8 @@ from config import config
 app.config['SECRET_KEY'] = config.SECRET_KEY
 app.config['DEBUG'] = config.DEBUG
 
-# Enable CORS for React frontend
-CORS(app, origins=config.CORS_ORIGINS)
+# Enable CORS for all origins (including file://)
+CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 # Initialize database manager and ML models
 db = DatabaseManager()
@@ -72,14 +76,14 @@ def simulate_ml_prediction(application_data, service_type='loan', selected_model
     """Updated prediction logic for new field structure with service type"""
     logger.info(f"Using {service_type} prediction with models: {selected_models}")
     
-    # Get values from new field structure (1, 0, -1 format)
-    credit_short = float(application_data.get('creditShort', 0))
-    credit_long = float(application_data.get('creditLong', 0))
+    # Get values - handle both camelCase and snake_case
+    credit_short = float(application_data.get('creditShort') or application_data.get('credit_short', 0))
+    credit_long = float(application_data.get('creditLong') or application_data.get('credit_long', 0))
     cph = float(application_data.get('cph', 0))
     ctl = float(application_data.get('ctl', 0))
     aph = float(application_data.get('aph', 0))
     atl = float(application_data.get('atl', 0))
-    quarter_fluctuation = float(application_data.get('quarterFluctuation', 0))
+    quarter_fluctuation = float(application_data.get('quarterFluctuation') or application_data.get('quarter_fluctuation', 0))
     
     # Updated scoring algorithm for new field structure
     score = 0
@@ -421,6 +425,21 @@ def get_application_details(current_user_id, app_id):
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
+# Serve frontend
+@app.route('/')
+def serve_frontend():
+    """Serve the main frontend page"""
+    return send_from_directory(FRONTEND_DIR, 'index.html')
+
+@app.route('/<path:path>')
+def serve_static(path):
+    """Serve static files (CSS, JS, images)"""
+    if os.path.exists(os.path.join(FRONTEND_DIR, path)):
+        return send_from_directory(FRONTEND_DIR, path)
+    else:
+        # If file not found, serve index.html (for SPA routing)
+        return send_from_directory(FRONTEND_DIR, 'index.html')
+
 # Health check endpoint
 @app.route('/api/health', methods=['GET'])
 def health_check():
@@ -441,12 +460,20 @@ def internal_error(error):
     return jsonify({'error': 'Internal server error'}), 500
 
 if __name__ == '__main__':
-    print("🚀 Starting Loan Prediction API Server...")
-    print("📊 Database:", db.db_path)
-    print("🌐 Server will be available at: http://localhost:5000")
-    print("📋 API Documentation:")
-    print("   POST /api/predict - Loan prediction")
-    print("   GET  /api/dashboard/stats - Dashboard statistics")
-    print("   GET  /api/health - Health check")
+    print("\n" + "="*80)
+    print("🚀 Starting PALP AI - Loan Prediction System".center(80))
+    print("="*80)
+    print(f"\n📊 Database: {db.db_path}")
+    print(f"📁 Frontend: {FRONTEND_DIR}")
+    print("\n🌐 Server URLs:")
+    print("   Frontend:  http://localhost:5000")
+    print("   API:       http://localhost:5000/api")
+    print("   Health:    http://localhost:5000/api/health")
+    print("\n📋 Available API Endpoints:")
+    print("   POST /api/predict           - Loan prediction")
+    print("   GET  /api/dashboard/stats   - Dashboard statistics")
+    print("   GET  /api/health            - Health check")
+    print("\n✅ Server is ready! Open http://localhost:5000 in your browser")
+    print("="*80 + "\n")
     
     app.run(debug=True, host='0.0.0.0', port=5000)

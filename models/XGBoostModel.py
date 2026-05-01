@@ -18,7 +18,7 @@ import xgboost as xgb
 # -----------------------------
 # Load dataset
 # -----------------------------
-data = pd.read_excel("../FINAL_DATASET_ARRANGED_MP2024.xlsx")
+data = pd.read_excel("../data/FINAL_DATASET_ARRANGED_MP2024.xlsx")
 
 X = data[['Credit-Short', 'Credit-Long']].values
 y = data['Cust_Type'].values  # categorical labels

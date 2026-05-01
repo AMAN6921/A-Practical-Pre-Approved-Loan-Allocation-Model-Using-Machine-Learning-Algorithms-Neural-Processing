@@ -10,7 +10,7 @@ from numpy.polynomial.polynomial import Polynomial
 # -----------------------------
 # Load dataset
 # -----------------------------
-data = pd.read_excel("../FINAL_DATASET_ARRANGED_MP2024.xlsx")
+data = pd.read_excel("../data/FINAL_DATASET_ARRANGED_MP2024.xlsx")
 
 X = data[['Credit-Short', 'Credit-Long']].values  # two features for 2D plot
 y = data['Cust_Type'].values

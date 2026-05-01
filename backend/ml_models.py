@@ -18,7 +18,13 @@ logger = logging.getLogger(__name__)
 class MLModelManager:
     """Manages all ML models for loan prediction"""
     
-    def __init__(self, models_dir="../"):
+    def __init__(self, models_dir=None):
+        # Get absolute path to models directory
+        if models_dir is None:
+            backend_dir = os.path.dirname(os.path.abspath(__file__))
+            project_root = os.path.dirname(backend_dir)
+            models_dir = os.path.join(project_root, 'models')
+        
         self.models_dir = models_dir
         self.models = {}
         self.feature_names = [
@@ -37,6 +43,8 @@ class MLModelManager:
             'mlp': 'MLPClassifierModel.pkl'
         }
         
+        logger.info(f"📁 Looking for models in: {self.models_dir}")
+        
         for model_name, filename in model_files.items():
             model_path = os.path.join(self.models_dir, filename)
             try:
@@ -44,7 +52,7 @@ class MLModelManager:
                     self.models[model_name] = joblib.load(model_path)
                     logger.info(f"✅ Loaded {model_name} model from {filename}")
                 else:
-                    logger.warning(f"⚠️  Model file not found: {filename}")
+                    logger.warning(f"⚠️  Model file not found: {model_path}")
             except Exception as e:
                 logger.error(f"❌ Failed to load {model_name}: {e}")
     

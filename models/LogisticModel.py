@@ -7,7 +7,7 @@ from sklearn.metrics import classification_report, confusion_matrix
 import joblib
 
 # Load dataset
-data = pd.read_excel("../FINAL_DATASET_ARRANGED_MP2024.xlsx")
+data = pd.read_excel("../data/FINAL_DATASET_ARRANGED_MP2024.xlsx")
 
 X = data[['Credit-Short']].values  # single feature for sigmoid curve
 y = data['Cust_Type'].values       # string labels: Very_Bad, Normal, Very_Good
